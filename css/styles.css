@@ -40,13 +40,12 @@ nav a {
 .banner {
     position: relative;
     width: 100%;
-    display: inline-block;
 }
 
 .banner img {
     width: 100%;
-    height: auto;        /* mantém proporção correta */
-    object-fit: contain; /* evita corte da imagem */
+    height: auto;
+    object-fit: contain;
 }
 
 .texto-banner {
@@ -54,7 +53,7 @@ nav a {
     bottom: 30px;
     left: 50px;
     color: white;
-    background: rgba(0, 0, 0, 0.5); /* fundo semitransparente */
+    background: rgba(0, 0, 0, 0.5);
     padding: 10px 15px;
     max-width: 60%;
     border-radius: 6px;
@@ -62,14 +61,27 @@ nav a {
 
 /* Responsividade para banner em telas menores */
 @media (max-width: 600px) {
+    .banner {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .banner img {
+        width: 100%;
         height: auto;
+        object-fit: contain;
     }
     .texto-banner {
-        left: 20px;
-        bottom: 20px;
-        max-width: 90%;
-        font-size: 0.9em;
+        position: static;
+        background: none;
+        color: #b30000;
+        padding: 20px 8px 4px 8px;
+        text-align: center;
+        max-width: 100%;
+        margin-top: 0;
+        border-radius: 0;
+        font-size: 1.2em;
     }
 }
 
@@ -125,7 +137,7 @@ nav a {
     display: flex;
     justify-content: space-around;
     padding: 20px;
-    flex-wrap: wrap; /* permite quebra de linha em telas pequenas */
+    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -134,7 +146,7 @@ nav a {
     background-color: white;
     border-radius: 10px;
     padding: 15px;
-    flex: 1 1 250px; /* largura mínima 250px, flexível */
+    flex: 1 1 250px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
@@ -143,3 +155,44 @@ nav a {
     max-width: 250px;
     height: auto;
     border-radius: 8px;
+    margin: 0 auto 10px auto;
+    display: block;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input, form textarea {
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+button {
+    background-color: #b30000;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+/* Rodapé */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
