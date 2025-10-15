@@ -4,48 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurante Japonês Sakura</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <img src="../imagens/sakuraflor.png" alt="Logo do Restaurante Sakura" class="logo">
-        <nav>
+    <header role="banner">
+        <img src="imagens/sakuraflor.png" alt="Logo do Restaurante Sakura com flor de cerejeira" class="logo">
+        <nav role="navigation" aria-label="Menu principal">
             <ul>
-                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html" aria-current="page">Início</a></li>
                 <li><a href="menu.html">Cardápio</a></li>
                 <li><a href="contato.html">Contato</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Banner principal -->
-    <section class="banner">
-        <!-- banner.jpg  -->
-        <img src="../imagens/pratos.png" alt="Imagem de pratos japoneses">
-        <div class="texto-banner">
-            <h1>Bem-vindo ao Restaurante Sakura</h1>
-            <p>O sabor autêntico da culinária japonesa</p>
-        </div>
-    </section>
-
-    <!-- Seção sobre -->
-    <main>
-        <section class="sobre">
-            <h2>Sobre Nós</h2>
-            <p>Oferecemos a melhor experiência gastronômica oriental, com ingredientes frescos e atendimento acolhedor.</p>
-            <!-- video -->
-     <div class="video-container">
-         <video controls>
-        <source src="../imagens/video-fachada.mp4" type="video/mp4">
-         </video>
-     </div>
+    <main tabindex="-1" id="conteudo-principal">
+        <!-- Banner principal -->
+        <section class="banner" role="region" aria-label="Bem-vindo">
+            <img src="imagens/pratos.png" alt="Seleção de pratos japoneses variados: sushi e sashimi coloridos">
+            <div class="texto-banner">
+                Bem-vindo ao Restaurante Sakura<br>
+                <span style="font-size:0.9em;">O sabor autêntico da culinária japonesa</span>
+            </div>
         </section>
+
+        <!-- Seção sobre -->
+        <section class="sobre" aria-labelledby="titulo-sobre">
+            <h2 id="titulo-sobre">Sobre Nós</h2>
+            <p>
+                Oferecemos a melhor experiência gastronômica oriental, com ingredientes frescos e atendimento acolhedor.
+            </p>
+            <div class="video-container">
+                <video controls aria-label="Vídeo com apresentação da fachada do restaurante">
+                    <source src="imagens/video-fachada.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeo.
+                </video>
+            </div>
+        </section>
+
+        <!-- Cardápio exemplo acessível -->
+        <section class="cardapio" aria-label="Cardápio de pratos">
+            <article class="prato">
+                <img src="imagens/sushi.png" alt="Porção de sushi sortido cuidadosamente apresentado em prato branco">
+                <h3>Sushi Assortment</h3>
+                <p>Fresco, colorido e delicioso: uma seleção especial de sushi.</p>
+            </article>
+            <article class="prato">
+                <img src="imagens/sashimi.png" alt="Prato de sashimi fatiado finamente, decorado com vegetais">
+                <h3>Fresh Sashimi Platter</h3>
+                <p>A pureza do peixe fresco, cortado na hora.</p>
+            </article>
+            <!-- Adicione mais pratos conforme necessário -->
+        </section>
+
+        <!-- Exemplo de formulário acessível -->
+        <form aria-label="Formulário de contato" autocomplete="on">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required aria-required="true">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required aria-required="true">
+
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="5" required aria-required="true"></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
     </main>
 
-    <!-- Rodapé -->
-    <footer>
+    <footer role="contentinfo">
         <p>© 2025 Restaurante Sakura. Todos os direitos reservados.</p>
-        <p>Criado pela equipe: Jose Gilmar e Marcela</p>
+        <p>Criado pela equipe: Jose Gilmar e Marcela.</p>
     </footer>
+
+    <!-- Botão de acessibilidade para aumentar fonte -->
+    <button class="access-btn" aria-label="Aumentar fonte" onclick="document.body.style.fontSize='1.23em'">A+</button>
 </body>
 </html>
