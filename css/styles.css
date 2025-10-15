@@ -27,6 +27,13 @@ nav a {
     font-weight: bold;
 }
 
+/* Logo com tamanho máximo e proporcional */
+.logo {
+    max-width: 150px;
+    height: auto;
+    display: block;
+}
+
 /* Banner */
 .banner {
     position: relative;
@@ -34,14 +41,14 @@ nav a {
 
 .banner img {
     width: 100%;
-    height: 400px;
-    object-fit: cover;
+    height: auto;        /* mantém proporção correta */
+    object-fit: contain; /* evita corte da imagem */
 }
 
 /* Responsividade para banner em telas menores */
 @media (max-width: 600px) {
     .banner img {
-        height: 200px;
+        height: auto;
     }
 }
 
@@ -81,7 +88,7 @@ nav a {
     display: flex;
     justify-content: space-around;
     padding: 20px;
-    flex-wrap: wrap; /* Permite wrap em telas pequenas */
+    flex-wrap: wrap; /* permite quebra de linha em telas pequenas */
     gap: 20px;
 }
 
@@ -90,12 +97,12 @@ nav a {
     background-color: white;
     border-radius: 10px;
     padding: 15px;
-    flex: 1 1 250px; /* largura mínima de 250px, flexível */
+    flex: 1 1 250px; /* largura mínima 250px, flexível */
 }
 
 .prato img {
-    width: 100%; /* Ocupa toda a largura do container */
-    max-width: 250px; /* Limite máximo */
+    width: 100%;
+    max-width: 250px;
     height: auto;
     border-radius: 8px;
     margin: 0 auto;
@@ -110,13 +117,26 @@ form {
     margin: 0 auto;
 }
 
+form label {
+    margin-top: 10px;
+}
+
+form input, form textarea {
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
 button {
     background-color: #b30000;
     color: white;
     border: none;
     padding: 10px;
-    margin-top: 10px;
+    margin-top: 15px;
     cursor: pointer;
+    font-size: 1em;
 }
 
 /* Rodapé */
@@ -126,3 +146,4 @@ footer {
     text-align: center;
     padding: 15px;
 }
+
